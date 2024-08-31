@@ -7,7 +7,8 @@ target_sources(nuked PRIVATE
     emitter/allocate.h
     emitter/x86/gen64.cpp
     emitter/x86/gen64.h
-    translator/ir.h
+    translator/preset.cpp
+    translator/preset.h
     translator/arm_types.h
     translator/arm64/arm_guest.cpp
     translator/arm64/arm_guest.h

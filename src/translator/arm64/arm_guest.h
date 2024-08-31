@@ -1,13 +1,11 @@
 #pragma once
 
 #include <instruction.h>
-
-#include <translator/ir.h>
+#include <translator/preset.h>
 namespace nuclear::translator::arm64 {
-    class ArmGuest : public Ir {
+    class ArmGuest : public Preset {
     public:
         ArmGuest() = default;
-        void emitterAdd(u32 opcode);
 
         void readNextInstruction() override;
         void reset() override;

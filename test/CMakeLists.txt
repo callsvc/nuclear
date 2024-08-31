@@ -1,3 +1,3 @@
 cmake_minimum_required(VERSION 3.21)
-add_executable(codegen codegen.cpp)
-target_link_libraries(codegen PRIVATE nuked)
+add_executable(arm-add arm_add.cpp)
+target_link_libraries(arm-add PRIVATE nuked)

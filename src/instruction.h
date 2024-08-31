@@ -1,19 +1,31 @@
 #pragma once
 #include <vector>
+#include <variant>
+
 #include <types.h>
 namespace nuclear {
-    using GprId = u16;
+    using GprId = u64;
     struct RegisterInstrumentedUse {
         GprId id;
-        u8 order;
+        GprId order;
         bool source;
     };
+    enum LayoutPattern {
+        Immediate
+    };
+    struct Memory {
+        LayoutPattern pattern;
+        std::variant<u16> value;
+    };
     enum Instruction {
-        Add
+        Mov,
+        Add,
+        Ret
     };
 
     struct FetchResult {
         Instruction operation;
         std::vector<RegisterInstrumentedUse> params;
+        Memory access;
     };
 }
